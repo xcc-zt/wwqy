@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --valorant-red: #ff4655;
+  --valorant-dark: #111111;
+  --valorant-light: #ece8e1;
+  --valorant-yellow: #f8c953;
+  --font-header: 'Oswald', sans-serif;
+  --font-body: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--valorant-light);
+  color: var(--valorant-dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav {
+  background-color: var(--valorant-dark);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.logo {
+  position: absolute;
+  left: 2rem;
+  font-family: var(--font-header);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--valorant-red);
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-family: var(--font-header);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--valorant-red);
+}
+
+.nav-btn {
+  background-color: var(--valorant-red);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  text-decoration: none;
+  font-family: var(--font-header);
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #d13643;
+}
+
+/* Hero Section */
+.hero {
+  height: 60vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+}
+
+.hero h1 {
+  font-family: var(--font-header);
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Sections */
+.section {
+  display: flex;
+  min-height: 60vh;
+  align-items: center;
+  padding: 4rem 10%;
+}
+
+.section.reverse {
+  flex-direction: row-reverse;
+}
+
+.section.bg-red {
+  background-color: var(--valorant-red);
+  color: #fff;
+}
+
+.section.bg-dark {
+  background-color: var(--valorant-dark);
+  color: #fff;
+}
+
+.section.bg-yellow {
+  background-color: var(--valorant-yellow);
+  color: var(--valorant-dark);
+}
+
+.section-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.section-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.section-image video,
+.section-image img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+.section-content h2 {
+  font-family: var(--font-header);
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.section-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--valorant-red);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  font-family: var(--font-header);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  background-color: #d13643;
+}
+
+.bg-red .btn {
+  background-color: var(--valorant-dark);
+}
+
+.bg-red .btn:hover {
+  background-color: #333;
+}
+
+/* Footer */
+footer {
+  background-color: var(--valorant-dark);
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  font-family: var(--font-header);
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .section {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem 5%;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .section-content h2 {
+    font-size: 2rem;
+  }
+}
